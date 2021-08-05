@@ -1,0 +1,12 @@
+{
+    "operationName": "sendPixNote",
+    "variables": {
+        "base64": "",
+        "recipient": "",
+        "contentType": ["Text", "Gif"],
+        "options": {
+            "deviceId": ""
+        }
+    },
+    "query": "mutation sendPixNote($base64: String, $recipient: String, $date: Date, $options: JSON, $contentType: [String]) {\n  sendPixNote(base64: $base64, recipient: $recipient, date: $date, options: $options, contentType: $contentType) {\n    _id\n    type\n    recipient\n    url\n    date\n    status {\n      label\n      __typename\n    }\n    senderUser {\n      _id\n      firstName\n      email\n      __typename\n    }\n    privacyPolicy\n    __typename\n  }\n}\n"
+}
